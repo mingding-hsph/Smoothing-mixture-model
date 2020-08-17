@@ -142,8 +142,6 @@ break
 }
 
 
-if (as.matrix(table(bmi_guts$group))[1,1]>20 | as.matrix(table(bmi_guts$group))[2,1]>20)
-{
 ###model estimation
 
 summary(b1)
@@ -151,8 +149,8 @@ summary(b2)
 
 ##LLK and BIC
 
-LLK_2_final=max(LLK_2[d_inter,])
-BIC_2_final=min(BIC_2[d_inter,])
+LLK_2_final=summary(LLK_2[,1])[6] ##MAX LL
+BIC_2_final=summary(BIC_2[,1])[1] ##MIN BIC
 
 write.csv(LLK_2,file="normal_LLK_2.csv", na="", col.names =T, row.names=T)
 write.csv(BIC_2,file="normal_BIC_2.csv", na="", col.names =T, row.names=T)
@@ -198,7 +196,7 @@ legend(0, 40, legend=c("Group 1", "Group 2"),
        col=c("black", "red"),  lty=1:1, cex=0.9)
 
 dev.off()
-}
+
 
 ######################################
 ############Three groups##############
@@ -330,9 +328,6 @@ break
 
 }
 
-if (as.matrix(table(bmi_guts$group))[1,1]>20 | as.matrix(table(bmi_guts$group))[2,1]>20| as.matrix(table(bmi_guts$group))[3,1]>20)
-
-{
 ###model estimation
 
 summary(b1)
@@ -341,9 +336,8 @@ summary(b3)
 
 ##LLK and BIC
 
-LLK_3_final=max(LLK_3[d_inter,])
-BIC_3_final=min(BIC_3[d_inter,])
-BIC_3_final=min(BIC_3[d_inter,])
+LLK_3_final=summary(LLK_3[,1])[6] ##MAX LL
+BIC_3_final=summary(BIC_3[,1])[1] ##MIN BIC
 
 write.csv(LLK_3,file="normal_LLK_3.csv", na="", col.names =T, row.names=T)
 write.csv(BIC_3,file="normal_BIC_3.csv", na="", col.names =T, row.names=T)
@@ -395,7 +389,7 @@ legend(0, 40, legend=c("Group 1", "Group 2", "Group 3"),
        col=c("black", "red", "green"), lty=1:1:1, cex=0.9)
 
 dev.off()
-}
+
 
 ######################################
 ############Four groups##############
@@ -541,9 +535,6 @@ break
 
 }
   
-if (as.matrix(table(bmi_guts$group))[1,1]>20 | as.matrix(table(bmi_guts$group))[2,1]>20| as.matrix(table(bmi_guts$group))[3,1]>20|as.matrix(table(bmi_guts$group))[4,1]>20)
-
-{
 ###model estimation
 
 summary(b1)
@@ -553,8 +544,8 @@ summary(b4)
 
 ##LLK and BIC
 
-LLK_4_final=max(LLK_4[d_inter,])
-BIC_4_final=min(BIC_4[d_inter,])
+LLK_4_final=summary(LLK_4[,1])[6] ##MAX LL
+BIC_4_final=summary(BIC_4[,1])[1] ##MIN BIC
 
 write.csv(LLK_4,file="normal_LLK_4.csv", na="", col.names =T, row.names=T)
 write.csv(BIC_4,file="normal_BIC_4.csv", na="", col.names =T, row.names=T)
@@ -612,7 +603,6 @@ legend(0, 40, legend=c("Group 1", "Group 2", "Group 3", "Group 4"),
 
 dev.off()
 
-}
 
 ######################################
 ############Five groups##############
@@ -769,9 +759,6 @@ break
 }
 
 
-if (as.matrix(table(bmi_guts$group))[1,1]>20 | as.matrix(table(bmi_guts$group))[2,1]>20| as.matrix(table(bmi_guts$group))[3,1]>20|as.matrix(table(bmi_guts$group))[4,1]>20|as.matrix(table(bmi_guts$group))[5,1]>20)
-
-{
 ###model estimation
 
 summary(b1)
@@ -782,8 +769,8 @@ summary(b5)
 
 ##LLK and BIC
 
-LLK_5_final=max(LLK_5[d_inter,])
-BIC_5_final=min(BIC_5[d_inter,])
+LLK_5_final=summary(LLK_5[,1])[6] ##MAX LL
+BIC_5_final=summary(BIC_5[,1])[1] ##MIN BIC
 
 write.csv(LLK_5,file="normal_LLK_5.csv", na="", col.names =T, row.names=T)
 write.csv(BIC_5,file="normal_BIC_5.csv", na="", col.names =T, row.names=T)
@@ -846,4 +833,4 @@ legend(0, 40, legend=c("Group 1", "Group 2", "Group 3", "Group 4", "Group 5"),
 
 dev.off()
 
-}
+
